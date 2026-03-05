@@ -246,14 +246,5 @@ Verify the API is running at `http://localhost:8000` and CORS is enabled in `api
 ## 👨‍💻 Author
 
 **Manmohan Reddy**  
-B.Tech – Data Analytics | Alliance University
+B.Tech – Data Analytics 
 
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-> 💡 *Built as part of a Big Data Analytics capstone project exploring geopolitical trends using the GDELT dataset.*
