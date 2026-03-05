@@ -1,0 +1,45 @@
+services:
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:24.3
+    container_name: gdelt_clickhouse
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    environment:
+      CLICKHOUSE_DB: gdelt
+      CLICKHOUSE_USER: gdelt_user
+      CLICKHOUSE_PASSWORD: gdelt_pass
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+
+  redpanda:
+    image: redpandadata/redpanda:v23.3.1
+    container_name: gdelt_redpanda
+    command:
+      - redpanda
+      - start
+      - --overprovisioned
+      - --smp 1
+      - --memory 512M
+      - --reserve-memory 0M
+      - --node-id 0
+      - --check=false
+    ports:
+      - "9092:9092"
+    volumes:
+      - redpanda_data:/var/lib/redpanda/data
+
+  redpanda_console:
+    image: redpandadata/console:v2.4.3
+    container_name: gdelt_console
+    ports:
+      - "8080:8080"
+    environment:
+      KAFKA_BROKERS: redpanda:9092
+    depends_on:
+      - redpanda
+
+volumes:
+  clickhouse_data:
+  redpanda_data:

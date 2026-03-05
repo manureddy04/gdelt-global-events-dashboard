@@ -1,0 +1,86 @@
+{
+  "folders": [
+    { "path": "." }
+  ],
+  "settings": {
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    "editor.formatOnSave": true,
+    "editor.rulers": [100],
+    "files.exclude": {
+      "**/__pycache__": true,
+      "**/*.pyc": true
+    },
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter"
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-python.python",
+      "ms-python.black-formatter",
+      "ms-azuretools.vscode-docker",
+      "rangav.vscode-thunder-client",
+      "mtxr.sqltools",
+      "PKief.material-icon-theme"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "FastAPI Dev",
+        "type": "python",
+        "request": "launch",
+        "module": "uvicorn",
+        "args": ["main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"],
+        "cwd": "${workspaceFolder}/backend",
+        "envFile": "${workspaceFolder}/.env",
+        "jinja": true
+      },
+      {
+        "name": "Bulk Loader (dry-run)",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/ingestion/bulk_loader/bulk_loader.py",
+        "args": ["--input-dir", "${env:GDELT_CSV_DIR}", "--dry-run"],
+        "envFile": "${workspaceFolder}/.env"
+      },
+      {
+        "name": "Redpanda Consumer",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/redpanda/consumer.py",
+        "envFile": "${workspaceFolder}/.env"
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Stack Up",
+        "type": "shell",
+        "command": "docker compose up -d",
+        "group": "build",
+        "presentation": { "reveal": "always" }
+      },
+      {
+        "label": "Stack Down",
+        "type": "shell",
+        "command": "docker compose down",
+        "group": "build"
+      },
+      {
+        "label": "Bulk Load (resume)",
+        "type": "shell",
+        "command": "cd ingestion/bulk_loader && python bulk_loader.py --input-dir ${GDELT_CSV_DIR} --resume --workers 8",
+        "group": "test"
+      },
+      {
+        "label": "View ClickHouse Logs",
+        "type": "shell",
+        "command": "docker compose logs -f clickhouse"
+      }
+    ]
+  }
+}

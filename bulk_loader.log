@@ -1,0 +1,288 @@
+2026-02-28 09:21:51,423 [INFO] Discovering CSV files in ....
+2026-02-28 09:21:51,579 [INFO] Found 31 files
+2026-02-28 09:21:51,579 [INFO] Starting bulk load: 31 files with 4 workers
+2026-02-28 09:26:33,565 [INFO] Discovering CSV files in ....
+2026-02-28 09:26:33,720 [INFO] Found 31 files
+2026-02-28 09:26:33,721 [INFO] Starting bulk load: 31 files with 4 workers
+2026-02-28 09:28:23,512 [INFO] Discovering CSV files in ....
+2026-02-28 09:28:23,668 [INFO] Found 31 files
+2026-02-28 09:28:23,668 [INFO] Starting bulk load: 31 files with 4 workers
+2026-02-28 09:30:08,103 [INFO] Discovering CSV files in ....
+2026-02-28 09:30:08,260 [INFO] Found 31 files
+2026-02-28 09:30:08,260 [INFO] Starting bulk load: 31 files with 4 workers
+2026-02-28 09:32:11,399 [INFO] Discovering CSV files in ....
+2026-02-28 09:32:11,560 [INFO] Found 31 files
+2026-02-28 09:32:11,560 [INFO] Starting bulk load: 31 files with 4 workers
+2026-02-28 09:36:21,770 [INFO] Discovering CSV files in ....
+2026-02-28 09:36:21,926 [INFO] Found 31 files
+2026-02-28 09:36:21,926 [INFO] Starting bulk load: 31 files with 4 workers
+2026-02-28 09:36:22,658 [INFO] [1/31] ✅ umath-validation-set-arccos.csv (0 rows in 0.1s)
+2026-02-28 09:36:22,659 [INFO] [2/31] ✅ umath-validation-set-arccosh.csv (0 rows in 0.1s)
+2026-02-28 09:36:22,660 [INFO] [3/31] ✅ umath-validation-set-arcsin.csv (0 rows in 0.1s)
+2026-02-28 09:36:22,694 [INFO] [4/31] ✅ umath-validation-set-arcsinh.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,700 [INFO] [5/31] ✅ umath-validation-set-arctan.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,701 [INFO] [6/31] ✅ umath-validation-set-arctanh.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,735 [INFO] [7/31] ✅ umath-validation-set-cbrt.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,739 [INFO] [8/31] ✅ umath-validation-set-cosh.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,739 [INFO] [9/31] ✅ umath-validation-set-cos.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,763 [INFO] [10/31] ✅ umath-validation-set-exp.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,774 [INFO] [11/31] ✅ umath-validation-set-exp2.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,775 [INFO] [12/31] ✅ umath-validation-set-expm1.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,793 [INFO] [13/31] ✅ umath-validation-set-log.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,815 [INFO] [14/31] ✅ umath-validation-set-log10.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,817 [INFO] [15/31] ✅ umath-validation-set-log1p.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,832 [INFO] [16/31] ✅ umath-validation-set-log2.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,853 [INFO] [17/31] ✅ umath-validation-set-sinh.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,854 [INFO] [18/31] ✅ umath-validation-set-sin.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,876 [INFO] [19/31] ✅ umath-validation-set-tan.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,889 [INFO] [20/31] ✅ mt19937-testset-1.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,892 [INFO] [21/31] ✅ umath-validation-set-tanh.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,910 [INFO] [22/31] ✅ mt19937-testset-2.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,926 [INFO] [23/31] ✅ pcg64-testset-1.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,926 [INFO] [24/31] ✅ pcg64-testset-2.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,945 [INFO] [25/31] ✅ pcg64dxsm-testset-1.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,964 [INFO] [26/31] ✅ pcg64dxsm-testset-2.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,964 [INFO] [27/31] ✅ philox-testset-1.csv (0 rows in 0.0s)
+2026-02-28 09:36:22,982 [INFO] [28/31] ✅ philox-testset-2.csv (0 rows in 0.0s)
+2026-02-28 09:36:23,003 [INFO] [29/31] ✅ sfc64-testset-1.csv (0 rows in 0.0s)
+2026-02-28 09:36:23,003 [INFO] [30/31] ✅ sfc64-testset-2.csv (0 rows in 0.0s)
+2026-02-28 09:36:23,170 [INFO] [31/31] ✅ 20130401.export.CSV (0 rows in 0.6s)
+2026-02-28 09:36:23,274 [INFO] ============================================================
+2026-02-28 09:36:23,274 [INFO] Bulk load complete in 0.0 minutes
+2026-02-28 09:36:23,274 [INFO]   ✅ Success:  31 files
+2026-02-28 09:36:23,274 [INFO]   ❌ Failed:   0 files
+2026-02-28 09:36:23,274 [INFO]   📦 Total rows: 0
+2026-02-28 09:36:23,274 [INFO]   ⚡ Throughput: 0 rows/sec
+2026-02-28 14:21:53,148 [INFO] Discovering CSV files in ....
+2026-02-28 14:21:53,270 [INFO] Found 31 files
+2026-02-28 14:21:53,270 [INFO] Starting bulk load: 31 files with 4 workers
+2026-02-28 14:21:54,258 [INFO] [1/31] ✅ umath-validation-set-arccosh.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,260 [INFO] [2/31] ✅ umath-validation-set-arccos.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,287 [INFO] [3/31] ✅ umath-validation-set-arcsin.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,317 [INFO] [4/31] ✅ umath-validation-set-arcsinh.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,318 [INFO] [5/31] ✅ umath-validation-set-arctan.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,352 [INFO] [6/31] ✅ umath-validation-set-arctanh.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,377 [INFO] [7/31] ✅ umath-validation-set-cos.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,380 [INFO] [8/31] ✅ umath-validation-set-cbrt.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,410 [INFO] [9/31] ✅ umath-validation-set-cosh.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,430 [INFO] [10/31] ✅ umath-validation-set-exp.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,446 [INFO] [11/31] ✅ umath-validation-set-exp2.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,476 [INFO] [12/31] ✅ umath-validation-set-expm1.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,480 [INFO] [13/31] ✅ umath-validation-set-log.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,505 [INFO] [14/31] ✅ umath-validation-set-log10.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,530 [INFO] [15/31] ✅ umath-validation-set-log1p.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,540 [INFO] [16/31] ✅ umath-validation-set-log2.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,562 [INFO] [17/31] ✅ umath-validation-set-sin.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,595 [INFO] [18/31] ✅ umath-validation-set-sinh.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,599 [INFO] [19/31] ✅ umath-validation-set-tan.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,619 [INFO] [20/31] ✅ umath-validation-set-tanh.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,642 [INFO] [21/31] ✅ mt19937-testset-1.csv (0 rows in 0.0s)
+2026-02-28 14:21:54,652 [INFO] [22/31] ✅ mt19937-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,669 [INFO] [23/31] ✅ pcg64-testset-1.csv (0 rows in 0.0s)
+2026-02-28 14:21:54,694 [INFO] [24/31] ✅ pcg64-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,703 [INFO] [25/31] ✅ pcg64dxsm-testset-1.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,725 [INFO] [26/31] ✅ pcg64dxsm-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,753 [INFO] [27/31] ✅ philox-testset-1.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,759 [INFO] [28/31] ✅ philox-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,781 [INFO] [29/31] ✅ sfc64-testset-1.csv (0 rows in 0.1s)
+2026-02-28 14:21:54,802 [INFO] [30/31] ✅ sfc64-testset-2.csv (0 rows in 0.0s)
+2026-02-28 14:21:54,980 [INFO] [31/31] ✅ 20130401.export.CSV (0 rows in 0.8s)
+2026-02-28 14:21:55,092 [INFO] ============================================================
+2026-02-28 14:21:55,092 [INFO] Bulk load complete in 0.0 minutes
+2026-02-28 14:21:55,092 [INFO]   ✅ Success:  31 files
+2026-02-28 14:21:55,092 [INFO]   ❌ Failed:   0 files
+2026-02-28 14:21:55,092 [INFO]   📦 Total rows: 0
+2026-02-28 14:21:55,092 [INFO]   ⚡ Throughput: 0 rows/sec
+2026-02-28 14:23:53,005 [INFO] Discovering CSV files in ....
+2026-02-28 14:23:53,197 [INFO] Found 31 files
+2026-02-28 14:23:53,197 [INFO] Starting bulk load: 31 files with 4 workers
+2026-02-28 14:23:54,276 [INFO] [1/31] ✅ umath-validation-set-arccos.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,278 [INFO] [2/31] ✅ umath-validation-set-arccosh.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,280 [INFO] [3/31] ✅ umath-validation-set-arcsin.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,355 [INFO] [4/31] ✅ umath-validation-set-arcsinh.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,358 [INFO] [5/31] ✅ umath-validation-set-arctanh.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,360 [INFO] [6/31] ✅ umath-validation-set-arctan.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,406 [INFO] [7/31] ✅ umath-validation-set-cos.csv (0 rows in 0.0s)
+2026-02-28 14:23:54,407 [INFO] [8/31] ✅ umath-validation-set-cbrt.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,416 [INFO] [9/31] ✅ umath-validation-set-cosh.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,452 [INFO] [10/31] ✅ umath-validation-set-exp.csv (0 rows in 0.0s)
+2026-02-28 14:23:54,462 [INFO] [11/31] ✅ umath-validation-set-exp2.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,470 [INFO] [12/31] ✅ umath-validation-set-expm1.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,499 [INFO] [13/31] ✅ umath-validation-set-log.csv (0 rows in 0.0s)
+2026-02-28 14:23:54,522 [INFO] [14/31] ✅ umath-validation-set-log10.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,528 [INFO] [15/31] ✅ umath-validation-set-log1p.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,566 [INFO] [16/31] ✅ umath-validation-set-log2.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,586 [INFO] [17/31] ✅ umath-validation-set-sin.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,592 [INFO] [18/31] ✅ umath-validation-set-sinh.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,625 [INFO] [19/31] ✅ umath-validation-set-tan.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,649 [INFO] [20/31] ✅ umath-validation-set-tanh.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,653 [INFO] [21/31] ✅ mt19937-testset-1.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,679 [INFO] [22/31] ✅ mt19937-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,700 [INFO] [23/31] ✅ pcg64-testset-1.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,707 [INFO] [24/31] ✅ pcg64-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,735 [INFO] [25/31] ✅ pcg64dxsm-testset-1.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,755 [INFO] [26/31] ✅ pcg64dxsm-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,765 [INFO] [27/31] ✅ philox-testset-1.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,788 [INFO] [28/31] ✅ philox-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,811 [INFO] [29/31] ✅ sfc64-testset-1.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,818 [INFO] [30/31] ✅ sfc64-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:23:54,968 [INFO] [31/31] ✅ 20130401.export.CSV (0 rows in 0.8s)
+2026-02-28 14:23:55,080 [INFO] ============================================================
+2026-02-28 14:23:55,080 [INFO] Bulk load complete in 0.0 minutes
+2026-02-28 14:23:55,080 [INFO]   ✅ Success:  31 files
+2026-02-28 14:23:55,080 [INFO]   ❌ Failed:   0 files
+2026-02-28 14:23:55,080 [INFO]   📦 Total rows: 0
+2026-02-28 14:23:55,081 [INFO]   ⚡ Throughput: 0 rows/sec
+2026-02-28 14:31:39,724 [INFO] Discovering CSV files in ....
+2026-02-28 14:31:39,893 [INFO] Found 31 files
+2026-02-28 14:31:39,894 [INFO] Starting bulk load: 31 files with 4 workers
+2026-02-28 14:31:40,930 [INFO] [1/31] ✅ umath-validation-set-arcsin.csv (0 rows in 0.1s)
+2026-02-28 14:31:40,932 [INFO] [2/31] ✅ umath-validation-set-arccos.csv (0 rows in 0.1s)
+2026-02-28 14:31:40,935 [INFO] [3/31] ✅ umath-validation-set-arccosh.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,027 [INFO] [4/31] ✅ umath-validation-set-arcsinh.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,031 [INFO] [5/31] ✅ umath-validation-set-arctanh.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,032 [INFO] [6/31] ✅ umath-validation-set-arctan.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,081 [INFO] [7/31] ✅ umath-validation-set-cbrt.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,084 [INFO] [8/31] ✅ umath-validation-set-cos.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,090 [INFO] [9/31] ✅ umath-validation-set-cosh.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,130 [INFO] [10/31] ✅ umath-validation-set-exp.csv (0 rows in 0.0s)
+2026-02-28 14:31:41,147 [INFO] [11/31] ✅ umath-validation-set-exp2.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,159 [INFO] [12/31] ✅ umath-validation-set-expm1.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,176 [INFO] [13/31] ✅ umath-validation-set-log.csv (0 rows in 0.0s)
+2026-02-28 14:31:41,215 [INFO] [14/31] ✅ umath-validation-set-log10.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,225 [INFO] [15/31] ✅ umath-validation-set-log1p.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,247 [INFO] [16/31] ✅ umath-validation-set-log2.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,280 [INFO] [17/31] ✅ umath-validation-set-sin.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,288 [INFO] [18/31] ✅ umath-validation-set-sinh.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,319 [INFO] [19/31] ✅ umath-validation-set-tan.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,348 [INFO] [20/31] ✅ umath-validation-set-tanh.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,359 [INFO] [21/31] ✅ mt19937-testset-1.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,385 [INFO] [22/31] ✅ mt19937-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,409 [INFO] [23/31] ✅ pcg64-testset-1.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,425 [INFO] [24/31] ✅ pcg64-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,444 [INFO] [25/31] ✅ pcg64dxsm-testset-1.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,470 [INFO] [26/31] ✅ pcg64dxsm-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,483 [INFO] [27/31] ✅ philox-testset-1.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,513 [INFO] [28/31] ✅ philox-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,532 [INFO] [29/31] ✅ sfc64-testset-1.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,550 [INFO] [30/31] ✅ sfc64-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:31:41,740 [INFO] [31/31] ✅ 20130401.export.CSV (0 rows in 0.9s)
+2026-02-28 14:31:41,852 [INFO] ============================================================
+2026-02-28 14:31:41,852 [INFO] Bulk load complete in 0.0 minutes
+2026-02-28 14:31:41,852 [INFO]   ✅ Success:  31 files
+2026-02-28 14:31:41,852 [INFO]   ❌ Failed:   0 files
+2026-02-28 14:31:41,852 [INFO]   📦 Total rows: 0
+2026-02-28 14:31:41,852 [INFO]   ⚡ Throughput: 0 rows/sec
+2026-02-28 14:34:06,472 [INFO] Discovering CSV files in ....
+2026-02-28 14:34:06,668 [INFO] Found 31 files
+2026-02-28 14:34:06,668 [INFO] Starting bulk load: 31 files with 4 workers
+2026-02-28 14:34:07,778 [INFO] [1/31] ✅ umath-validation-set-arcsin.csv (0 rows in 0.1s)
+2026-02-28 14:34:07,779 [INFO] [2/31] ✅ umath-validation-set-arccos.csv (0 rows in 0.1s)
+2026-02-28 14:34:07,780 [INFO] [3/31] ✅ umath-validation-set-arccosh.csv (0 rows in 0.1s)
+2026-02-28 14:34:07,841 [INFO] [4/31] ✅ umath-validation-set-arcsinh.csv (0 rows in 0.1s)
+2026-02-28 14:34:07,863 [INFO] [5/31] ✅ umath-validation-set-arctan.csv (0 rows in 0.1s)
+2026-02-28 14:34:07,863 [INFO] [6/31] ✅ umath-validation-set-arctanh.csv (0 rows in 0.1s)
+2026-02-28 14:34:07,896 [INFO] [7/31] ✅ umath-validation-set-cbrt.csv (0 rows in 0.1s)
+2026-02-28 14:34:07,922 [INFO] [8/31] ✅ umath-validation-set-cos.csv (0 rows in 0.1s)
+2026-02-28 14:34:07,923 [INFO] [9/31] ✅ umath-validation-set-cosh.csv (0 rows in 0.1s)
+2026-02-28 14:34:07,942 [INFO] [10/31] ✅ umath-validation-set-exp.csv (0 rows in 0.0s)
+2026-02-28 14:34:07,972 [INFO] [11/31] ✅ umath-validation-set-exp2.csv (0 rows in 0.1s)
+2026-02-28 14:34:07,974 [INFO] [12/31] ✅ umath-validation-set-expm1.csv (0 rows in 0.1s)
+2026-02-28 14:34:07,989 [INFO] [13/31] ✅ umath-validation-set-log.csv (0 rows in 0.0s)
+2026-02-28 14:34:08,028 [INFO] [14/31] ✅ umath-validation-set-log1p.csv (0 rows in 0.1s)
+2026-02-28 14:34:08,031 [INFO] [15/31] ✅ umath-validation-set-log10.csv (0 rows in 0.1s)
+2026-02-28 14:34:08,044 [INFO] [16/31] ✅ umath-validation-set-log2.csv (0 rows in 0.1s)
+2026-02-28 14:34:08,084 [INFO] [17/31] ✅ umath-validation-set-sin.csv (0 rows in 0.1s)
+2026-02-28 14:34:08,096 [INFO] [18/31] ✅ umath-validation-set-sinh.csv (0 rows in 0.1s)
+2026-02-28 14:34:08,204 [INFO] [19/31] ✅ umath-validation-set-tan.csv (0 rows in 0.2s)
+2026-02-28 14:34:08,253 [INFO] [20/31] ✅ umath-validation-set-tanh.csv (0 rows in 0.2s)
+2026-02-28 14:34:08,253 [INFO] [21/31] ✅ mt19937-testset-1.csv (0 rows in 0.2s)
+2026-02-28 14:34:08,271 [INFO] [22/31] ✅ mt19937-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:34:08,303 [INFO] [23/31] ✅ pcg64-testset-1.csv (0 rows in 0.0s)
+2026-02-28 14:34:08,304 [INFO] [24/31] ✅ pcg64-testset-2.csv (0 rows in 0.0s)
+2026-02-28 14:34:08,321 [INFO] [25/31] ✅ pcg64dxsm-testset-1.csv (0 rows in 0.0s)
+2026-02-28 14:34:08,354 [INFO] [26/31] ✅ pcg64dxsm-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:34:08,355 [INFO] [27/31] ✅ philox-testset-1.csv (0 rows in 0.1s)
+2026-02-28 14:34:08,395 [INFO] [28/31] ✅ philox-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:34:08,413 [INFO] [29/31] ✅ sfc64-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:34:08,422 [INFO] [30/31] ✅ sfc64-testset-1.csv (0 rows in 0.1s)
+2026-02-28 14:34:08,566 [INFO] [31/31] ✅ 20130401.export.CSV (0 rows in 0.9s)
+2026-02-28 14:34:08,669 [INFO] ============================================================
+2026-02-28 14:34:08,669 [INFO] Bulk load complete in 0.0 minutes
+2026-02-28 14:34:08,669 [INFO]   ✅ Success:  31 files
+2026-02-28 14:34:08,669 [INFO]   ❌ Failed:   0 files
+2026-02-28 14:34:08,669 [INFO]   📦 Total rows: 0
+2026-02-28 14:34:08,669 [INFO]   ⚡ Throughput: 0 rows/sec
+2026-02-28 14:35:42,282 [INFO] Discovering CSV files in ....
+2026-02-28 14:35:42,468 [INFO] Found 31 files
+2026-02-28 14:35:42,468 [INFO] Starting bulk load: 31 files with 4 workers
+2026-02-28 14:35:43,573 [INFO] [1/31] ✅ umath-validation-set-arccosh.csv (0 rows in 0.1s)
+2026-02-28 14:35:43,575 [INFO] [2/31] ✅ umath-validation-set-arcsin.csv (0 rows in 0.1s)
+2026-02-28 14:35:43,581 [INFO] [3/31] ✅ umath-validation-set-arccos.csv (0 rows in 0.1s)
+2026-02-28 14:35:43,661 [INFO] [4/31] ✅ umath-validation-set-arcsinh.csv (0 rows in 0.1s)
+2026-02-28 14:35:43,663 [INFO] [5/31] ✅ umath-validation-set-arctan.csv (0 rows in 0.1s)
+2026-02-28 14:35:43,708 [INFO] [6/31] ✅ umath-validation-set-arctanh.csv (0 rows in 0.1s)
+2026-02-28 14:35:43,743 [INFO] [7/31] ✅ umath-validation-set-cbrt.csv (0 rows in 0.1s)
+2026-02-28 14:35:43,743 [INFO] [8/31] ✅ umath-validation-set-cos.csv (0 rows in 0.1s)
+2026-02-28 14:35:43,788 [INFO] [9/31] ✅ umath-validation-set-cosh.csv (0 rows in 0.1s)
+2026-02-28 14:35:43,811 [INFO] [10/31] ✅ umath-validation-set-exp.csv (0 rows in 0.1s)
+2026-02-28 14:35:43,825 [INFO] [11/31] ✅ umath-validation-set-exp2.csv (0 rows in 0.1s)
+2026-02-28 14:35:43,865 [INFO] [12/31] ✅ umath-validation-set-expm1.csv (0 rows in 0.1s)
+2026-02-28 14:35:43,872 [INFO] [13/31] ✅ umath-validation-set-log.csv (0 rows in 0.1s)
+2026-02-28 14:35:43,895 [INFO] [14/31] ✅ umath-validation-set-log10.csv (0 rows in 0.1s)
+2026-02-28 14:35:43,924 [INFO] [15/31] ✅ umath-validation-set-log1p.csv (0 rows in 0.1s)
+2026-02-28 14:35:43,935 [INFO] [16/31] ✅ umath-validation-set-log2.csv (0 rows in 0.1s)
+2026-02-28 14:35:43,957 [INFO] [17/31] ✅ umath-validation-set-sin.csv (0 rows in 0.1s)
+2026-02-28 14:35:43,991 [INFO] [18/31] ✅ umath-validation-set-sinh.csv (0 rows in 0.1s)
+2026-02-28 14:35:43,994 [INFO] [19/31] ✅ umath-validation-set-tan.csv (0 rows in 0.1s)
+2026-02-28 14:35:44,024 [INFO] [20/31] ✅ umath-validation-set-tanh.csv (0 rows in 0.1s)
+2026-02-28 14:35:44,066 [INFO] [21/31] ✅ mt19937-testset-1.csv (0 rows in 0.1s)
+2026-02-28 14:35:44,068 [INFO] [22/31] ✅ mt19937-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:35:44,094 [INFO] [23/31] ✅ pcg64-testset-1.csv (0 rows in 0.1s)
+2026-02-28 14:35:44,129 [INFO] [24/31] ✅ pcg64-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:35:44,134 [INFO] [25/31] ✅ pcg64dxsm-testset-1.csv (0 rows in 0.1s)
+2026-02-28 14:35:44,152 [INFO] [26/31] ✅ pcg64dxsm-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:35:44,183 [INFO] [27/31] ✅ philox-testset-1.csv (0 rows in 0.1s)
+2026-02-28 14:35:44,192 [INFO] [28/31] ✅ philox-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:35:44,201 [INFO] [29/31] ✅ sfc64-testset-1.csv (0 rows in 0.0s)
+2026-02-28 14:35:44,237 [INFO] [30/31] ✅ sfc64-testset-2.csv (0 rows in 0.1s)
+2026-02-28 14:35:44,384 [INFO] [31/31] ✅ 20130401.export.CSV (0 rows in 0.9s)
+2026-02-28 14:35:44,480 [INFO] ============================================================
+2026-02-28 14:35:44,480 [INFO] Bulk load complete in 0.0 minutes
+2026-02-28 14:35:44,480 [INFO]   ✅ Success:  31 files
+2026-02-28 14:35:44,480 [INFO]   ❌ Failed:   0 files
+2026-02-28 14:35:44,480 [INFO]   📦 Total rows: 0
+2026-02-28 14:35:44,480 [INFO]   ⚡ Throughput: 0 rows/sec
+2026-02-28 14:37:44,049 [INFO] Discovering CSV files in ....
+2026-02-28 14:37:44,217 [INFO] Found 31 files
+2026-02-28 14:37:44,217 [INFO] Limited to 1 files
+2026-02-28 14:37:44,218 [INFO] Starting bulk load: 1 files with 4 workers
+2026-02-28 14:37:45,277 [INFO] [1/1] ✅ 20130401.export.CSV (0 rows in 0.4s)
+2026-02-28 14:37:45,330 [INFO] ============================================================
+2026-02-28 14:37:45,330 [INFO] Bulk load complete in 0.0 minutes
+2026-02-28 14:37:45,330 [INFO]   ✅ Success:  1 files
+2026-02-28 14:37:45,330 [INFO]   ❌ Failed:   0 files
+2026-02-28 14:37:45,330 [INFO]   📦 Total rows: 0
+2026-02-28 14:37:45,330 [INFO]   ⚡ Throughput: 0 rows/sec
+2026-02-28 14:40:16,982 [INFO] Discovering CSV files in ....
+2026-02-28 14:40:17,148 [INFO] Found 31 files
+2026-02-28 14:40:17,148 [INFO] Limited to 1 files
+2026-02-28 14:40:17,148 [INFO] Starting bulk load: 1 files with 4 workers
+2026-02-28 14:40:18,193 [INFO] [1/1] ✅ 20130401.export.CSV (0 rows in 0.4s)
+2026-02-28 14:40:18,243 [INFO] ============================================================
+2026-02-28 14:40:18,243 [INFO] Bulk load complete in 0.0 minutes
+2026-02-28 14:40:18,243 [INFO]   ✅ Success:  1 files
+2026-02-28 14:40:18,243 [INFO]   ❌ Failed:   0 files
+2026-02-28 14:40:18,243 [INFO]   📦 Total rows: 0
+2026-02-28 14:40:18,243 [INFO]   ⚡ Throughput: 0 rows/sec
+2026-02-28 14:42:58,992 [INFO] Discovering CSV files in ....
+2026-02-28 14:42:59,159 [INFO] Found 31 files
+2026-02-28 14:42:59,159 [INFO] Limited to 1 files
+2026-02-28 14:42:59,159 [INFO] Starting bulk load: 1 files with 4 workers
+2026-02-28 14:43:00,209 [INFO] [1/1] ✅ 20130401.export.CSV (0 rows in 0.4s)
+2026-02-28 14:43:00,261 [INFO] ============================================================
+2026-02-28 14:43:00,262 [INFO] Bulk load complete in 0.0 minutes
+2026-02-28 14:43:00,262 [INFO]   ✅ Success:  1 files
+2026-02-28 14:43:00,262 [INFO]   ❌ Failed:   0 files
+2026-02-28 14:43:00,262 [INFO]   📦 Total rows: 0
+2026-02-28 14:43:00,262 [INFO]   ⚡ Throughput: 0 rows/sec
