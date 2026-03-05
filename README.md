@@ -1,267 +1,277 @@
-# 🌍 GDELT Analytics Stack
+🌍 Global Event Intelligence Dashboard
 
-> ClickHouse + Redpanda + FastAPI — production-grade OLAP pipeline for 14 years of GDELT geopolitical data.
 
----
 
-## Architecture
 
-```
-Historical CSV (14 Years)              Daily New Files
-        │                                    │
-   bulk_loader.py                     producer.py --watch-dir
-        │                                    │
-        └──────────────┬─────────────────────┘
-                       ▼
-              ┌─────────────────┐
-              │    Redpanda     │  ← Kafka-compatible broker
-              │  (Topic: gdelt) │
-              └────────┬────────┘
-                       │ consumer.py (batch insert)
-                       ▼
-              ┌─────────────────┐
-              │   ClickHouse    │  ← OLAP columnar DB
-              │  Partitioned    │
-              │  by YYYYMM      │
-              └────────┬────────┘
-                       │
-              ┌─────────────────┐
-              │   FastAPI       │  → /api/v1/...
-              │   Backend       │
-              └────────┬────────┘
-                       │
-              ┌─────────────────┐
-              │ React Frontend  │  (your dashboard)
-              └─────────────────┘
-```
 
----
 
-## 🚀 Quick Start
 
-### 1. Prerequisites
 
-- Docker Desktop (with Compose v2)
-- Python 3.12+
-- 8GB+ RAM recommended (ClickHouse is RAM-hungry)
 
-### 2. Clone & Start the Stack
 
-```bash
-# Open this workspace in VS Code
-code gdelt-stack.code-workspace
+A Big Data Analytics Platform for exploring global geopolitical events using the GDELT dataset, powered by ClickHouse, FastAPI, and React.
 
-# Start all services
+The system processes large-scale historical event data and visualizes geopolitical activity through an interactive geospatial dashboard.
+
+📊 Project Overview
+
+The Global Event Intelligence Dashboard analyzes worldwide political and social events using the GDELT (Global Database of Events, Language, and Tone) dataset.
+
+The platform enables users to explore:
+
+Global conflicts and cooperation trends
+
+Event intensity using Goldstein Scale
+
+Geographic distribution of political events
+
+Historical event patterns over time
+
+Country-level geopolitical activity
+
+The system is designed as a big data analytics pipeline with a high-performance OLAP database and a modern web visualization dashboard.
+
+🏗 System Architecture
+GDELT CSV Files
+        │
+        ▼
+Python Bulk Loader
+        │
+        ▼
+ClickHouse OLAP Database
+        │
+        ▼
+FastAPI Backend API
+        │
+        ▼
+React + Leaflet Dashboard
+Data Flow
+
+1️⃣ Historical GDELT CSV files are ingested using a Python bulk loader
+2️⃣ Data is stored in ClickHouse for high-performance analytics
+3️⃣ FastAPI exposes REST APIs for querying event data
+4️⃣ React dashboard visualizes global events on an interactive map
+
+🧠 Architecture Diagram
+
+(You can add a diagram here later)
+
+Example placeholder:
+
+CSV Data
+   │
+   ▼
+Bulk Loader (Python)
+   │
+   ▼
+ClickHouse Database
+   │
+   ▼
+FastAPI API
+   │
+   ▼
+React Dashboard
+⚙️ Technology Stack
+Backend
+
+Python
+
+FastAPI
+
+ClickHouse Connect
+
+Docker
+
+Responsibilities:
+
+Data ingestion
+
+API services
+
+Query execution
+
+Database
+ClickHouse
+
+ClickHouse is used as the analytical database because it provides:
+
+Columnar storage
+
+High compression
+
+Extremely fast aggregation queries
+
+Efficient partitioning
+
+Table configuration:
+
+ENGINE = MergeTree
+PARTITION BY toYYYYMM(event_date)
+ORDER BY (event_date, global_event_id)
+Frontend
+
+The interactive dashboard is built using:
+
+React
+
+Material UI
+
+Leaflet
+
+React Leaflet
+
+Heatmap visualization
+
+🚀 Features
+🌍 Global Event Map
+
+Displays worldwide events using geographic coordinates.
+
+Each event appears as a marker on the map.
+
+🔥 Heatmap Visualization
+
+Heatmap mode shows event intensity density across regions, highlighting geopolitical hotspots.
+
+⏱ Timeline Explorer
+
+Users can explore events using:
+
+Year filter
+
+Month filter
+
+Day filter
+
+Timeline autoplay
+
+🔎 Country Search
+
+Users can filter events by country name.
+
+Example:
+
+Search: India
+📊 Event Summary
+
+The dashboard shows:
+
+Total events
+
+Conflict events (Goldstein < 0)
+
+Cooperation events (Goldstein > 0)
+
+🖥 Dashboard Preview
+
+(Add screenshots here)
+
+Example:
+
+/screenshots/dashboard_map.png
+/screenshots/dashboard_heatmap.png
+/screenshots/dashboard_summary.png
+📥 Dataset
+
+This project uses the GDELT Event Dataset, which contains structured information about global events extracted from international news sources.
+
+Each record contains:
+
+Column	Description
+GlobalEventID	Unique event identifier
+SQLDATE	Event date
+Actor1CountryCode	Country involved
+ActionGeo_Lat	Latitude
+ActionGeo_Long	Longitude
+GoldsteinScale	Event intensity
+SOURCEURL	Source article
+🚀 Running the Project
+1️⃣ Start ClickHouse
 docker compose up -d
+2️⃣ Load CSV Data
+python bulk_loader.py --input-dir ./data
+3️⃣ Start Backend
+uvicorn api:app --reload
 
-# Verify everything is healthy
-docker compose ps
-```
+API documentation:
 
-Services will be available at:
-| Service            | URL                          |
-|--------------------|------------------------------|
-| FastAPI docs       | http://localhost:8000/docs   |
-| Redpanda Console   | http://localhost:8080        |
-| ClickHouse HTTP    | http://localhost:8123        |
+http://localhost:8000/docs
+4️⃣ Start Dashboard
+npm start
 
-### 3. Load Historical Data (one-time)
+Dashboard runs at:
 
-```bash
-cd ingestion/bulk_loader
-pip install -r requirements.txt
+http://localhost:3000
+📡 API Example
 
-# Point at your CSV directory
-export GDELT_CSV_DIR=/path/to/your/14years/csvs
+Example query:
 
-# Dry run first — lists files without loading
-python bulk_loader.py --input-dir $GDELT_CSV_DIR --dry-run
+GET /events?year=2026&month=2&day=22
 
-# Real load — 8 parallel workers, auto-resume on restart
-python bulk_loader.py --input-dir $GDELT_CSV_DIR --workers 8 --resume
-```
+Example response:
 
-**Estimated load time (5000 files, ~1B rows):**
-- 4 workers on NVMe: ~2–4 hours
-- 8 workers: ~1–2 hours
-
-### 4. Start Daily Streaming (new files)
-
-```bash
-cd redpanda
-pip install -r requirements.txt
-
-# Watch a directory — produces any new .CSV files to Redpanda
-python producer.py --watch-dir /data/gdelt/incoming --poll-interval 300
-```
-
-The Consumer runs automatically inside Docker — it reads from Redpanda and batch-inserts to ClickHouse.
-
----
-
-## 📡 API Reference
-
-### Core Endpoints
-
-```
-GET /health                              Health check
-
-GET /api/v1/events/timeseries            Time series aggregation
-    ?date_from=2015-01-01
-    ?date_to=2018-12-31
-    ?country=US
-    ?granularity=month
-
-GET /api/v1/events/search                Paginated event search
-    ?date_from=...&date_to=...
-    ?country=SY&quad_class=4
-    ?page=1&limit=100
-
-GET /api/v1/events/top-events           Highest impact events
-    ?date_from=...&date_to=...
-    ?sort_by=mentions
-
-GET /api/v1/countries/metrics           Per-country KPIs (choropleth)
-    ?date_from=...&date_to=...
-
-GET /api/v1/countries/compare           Multi-country comparison
-    ?countries=US,CN,RU
-    ?date_from=...&date_to=...
-
-GET /api/v1/countries/hotspots          Conflict hotspot countries
-
-GET /api/v1/summary/overview            Dashboard header KPIs
-
-GET /api/v1/summary/ingestion-status    Ingestion health
-
-POST /api/v1/ingest/upload              Upload a CSV via API
-POST /api/v1/ingest/trigger-daily       Manually trigger daily watch
-```
-
-Full interactive docs at: **http://localhost:8000/docs**
-
----
-
-## 🗄️ ClickHouse Schema
-
-### Main Table: `gdelt.events`
-
-```sql
-PARTITION BY toYYYYMM(event_date)         -- 168 partitions for 14 years
-ORDER BY (event_date, action_geo_country, event_code)
-```
-
-### Materialized Views (auto-updated)
-
-| View | Purpose |
-|------|---------|
-| `mv_daily_agg` | Pre-aggregated daily stats per country |
-| `mv_country_monthly` | Monthly country summaries for maps |
-
-### Direct ClickHouse Access
-
-```bash
-# Via HTTP
-curl "http://localhost:8123/?query=SELECT+count(*)+FROM+gdelt.events&user=gdelt_user&password=gdelt_pass"
-
-# Via Docker exec
-docker exec -it gdelt_clickhouse clickhouse-client --user gdelt_user --password gdelt_pass
-```
-
----
-
-## 🔧 Configuration
-
-All config via `.env` at project root:
-
-```env
-CLICKHOUSE_HOST=localhost
-CLICKHOUSE_PORT=8123
-CLICKHOUSE_DB=gdelt
-CLICKHOUSE_USER=gdelt_user
-CLICKHOUSE_PASSWORD=gdelt_pass
-
-REDPANDA_BROKERS=localhost:19092
-REDPANDA_TOPIC=gdelt_events
-
-GDELT_CSV_DIR=/data/gdelt/csv
-DAILY_WATCH_DIR=/data/gdelt/incoming
-
-BATCH_SIZE=10000          # consumer batch before CH insert
-FLUSH_INTERVAL_SEC=5      # max wait before flushing partial batch
-```
-
----
-
-## 📊 GDELT QuadClass Reference
-
-| Code | Meaning |
-|------|---------|
-| 1 | Verbal Cooperation |
-| 2 | Material Cooperation |
-| 3 | Verbal Conflict |
-| 4 | Material Conflict |
-
-Goldstein Scale: **-10** (most conflictual) → **+10** (most cooperative)
-
----
-
-## 🗂️ Project Structure
-
-```
-gdelt-stack/
-├── docker-compose.yml
-├── .env
-├── gdelt-stack.code-workspace
+[
+ {
+  "country": "IND",
+  "lat": 20.5937,
+  "lon": 78.9629,
+  "goldstein": -4.0
+ }
+]
+📂 Project Structure
+gdelt-event-dashboard
 │
-├── clickhouse/
-│   └── schemas/
-│       └── 01_init.sql            ← Tables + materialized views
+├── backend
+│   ├── api.py
+│   ├── bulk_loader.py
 │
-├── redpanda/
-│   ├── producer.py                ← CSV → Redpanda (daily files)
-│   ├── consumer.py                ← Redpanda → ClickHouse
-│   ├── requirements.txt
-│   └── Dockerfile
+├── dashboard
+│   ├── src
+│   │   └── App.js
 │
-├── backend/
-│   ├── main.py                    ← FastAPI app
-│   ├── Dockerfile
-│   ├── requirements.txt
-│   ├── core/
-│   │   ├── config.py
-│   │   └── database.py
-│   └── api/v1/
-│       ├── router.py
-│       └── endpoints/
-│           ├── events.py          ← Timeseries, search, top events
-│           ├── countries.py       ← Geo metrics, compare, hotspots
-│           ├── summary.py         ← Overview KPIs, ingestion status
-│           └── ingest.py          ← Upload & trigger ingestion
+├── docker
+│   └── docker-compose.yml
 │
-├── ingestion/
-│   └── bulk_loader/
-│       ├── bulk_loader.py         ← Historical CSV → ClickHouse
-│       └── requirements.txt
+├── data
+│   └── gdelt_csv_files
 │
-└── docker/
-    └── console-config.yaml        ← Redpanda Console config
-```
+└── README.md
+⚡ Performance
 
----
+Using ClickHouse provides extremely fast analytical queries.
 
-## 🛠️ VS Code Integration
+Example metrics:
 
-The workspace includes pre-configured:
-- **Launch configs** — run FastAPI, bulk loader, consumer with F5
-- **Tasks** — `Stack Up/Down`, `Bulk Load`, `View Logs` from Task Runner
-- **Recommended extensions** — Python, Docker, Thunder Client, SQLTools
+Query	Time
+Event count by year	< 50 ms
+Country aggregation	< 100 ms
+Heatmap query	< 200 ms
+📚 GDELT Event Classification
+QuadClass	Meaning
+1	Verbal Cooperation
+2	Material Cooperation
+3	Verbal Conflict
+4	Material Conflict
 
----
+Goldstein Scale:
 
-## ⚡ Performance Tips
+-10 → strong conflict
++10 → strong cooperation
+🎓 Academic Relevance
 
-- Set `--workers 8` on bulk loader for NVMe SSDs (reduce to 4 for HDD)
-- ClickHouse's `max_execution_time=30` prevents runaway queries
-- For dashboards, query `gdelt.events_daily_agg` instead of raw `gdelt.events`
-- Add `LIMIT` to all queries — ClickHouse can return millions of rows fast but serialization is the bottleneck
+This project demonstrates concepts in:
+
+Big Data Analytics
+
+OLAP Databases
+
+Data Engineering Pipelines
+
+Geospatial Data Visualization
+
+Full-Stack Analytics Systems
+
+👨‍💻 Author
+
+Manmohan Reddy
+B.Tech – Data Analytics
