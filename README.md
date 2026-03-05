@@ -1,277 +1,259 @@
-🌍 Global Event Intelligence Dashboard
+# 🌍 Global Event Intelligence Dashboard
 
+> A Big Data Analytics Platform for exploring global geopolitical events using the GDELT dataset, powered by ClickHouse, FastAPI, and React.
 
+![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green?logo=fastapi&logoColor=white)
+![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react&logoColor=black)
+![ClickHouse](https://img.shields.io/badge/ClickHouse-OLAP-yellow?logo=clickhouse&logoColor=black)
+![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
+---
 
+## 📖 Overview
 
+The **Global Event Intelligence Dashboard** analyzes worldwide political and social events using the [GDELT (Global Database of Events, Language, and Tone)](https://www.gdeltproject.org/) dataset. It processes large-scale historical event data and visualizes geopolitical activity through an interactive, geospatial dashboard.
 
+### What you can explore:
+- 🔴 Global conflicts and cooperation trends
+- 📉 Event intensity using the **Goldstein Scale**
+- 🗺️ Geographic distribution of political events
+- 📅 Historical event patterns over time
+- 🏳️ Country-level geopolitical activity
 
+---
 
+## 🏗️ System Architecture
 
-
-A Big Data Analytics Platform for exploring global geopolitical events using the GDELT dataset, powered by ClickHouse, FastAPI, and React.
-
-The system processes large-scale historical event data and visualizes geopolitical activity through an interactive geospatial dashboard.
-
-📊 Project Overview
-
-The Global Event Intelligence Dashboard analyzes worldwide political and social events using the GDELT (Global Database of Events, Language, and Tone) dataset.
-
-The platform enables users to explore:
-
-Global conflicts and cooperation trends
-
-Event intensity using Goldstein Scale
-
-Geographic distribution of political events
-
-Historical event patterns over time
-
-Country-level geopolitical activity
-
-The system is designed as a big data analytics pipeline with a high-performance OLAP database and a modern web visualization dashboard.
-
-🏗 System Architecture
+```
 GDELT CSV Files
-        │
-        ▼
+      │
+      ▼
 Python Bulk Loader
-        │
-        ▼
+      │
+      ▼
 ClickHouse OLAP Database
-        │
-        ▼
+      │
+      ▼
 FastAPI Backend API
-        │
-        ▼
+      │
+      ▼
 React + Leaflet Dashboard
-Data Flow
+```
 
-1️⃣ Historical GDELT CSV files are ingested using a Python bulk loader
-2️⃣ Data is stored in ClickHouse for high-performance analytics
-3️⃣ FastAPI exposes REST APIs for querying event data
-4️⃣ React dashboard visualizes global events on an interactive map
+### Data Flow
 
-🧠 Architecture Diagram
+| Step | Component | Description |
+|------|-----------|-------------|
+| 1 | **Python Bulk Loader** | Ingests historical GDELT CSV files into the database |
+| 2 | **ClickHouse** | Stores and indexes data for high-performance analytics |
+| 3 | **FastAPI** | Exposes REST APIs for querying event data |
+| 4 | **React + Leaflet** | Renders the interactive map-based dashboard |
 
-(You can add a diagram here later)
+---
 
-Example placeholder:
+## ⚙️ Technology Stack
 
-CSV Data
-   │
-   ▼
-Bulk Loader (Python)
-   │
-   ▼
-ClickHouse Database
-   │
-   ▼
-FastAPI API
-   │
-   ▼
-React Dashboard
-⚙️ Technology Stack
-Backend
+### Backend
+| Technology | Purpose |
+|------------|---------|
+| Python | Bulk data loading & processing |
+| FastAPI | REST API framework |
+| ClickHouse | High-performance OLAP database |
+| Docker | Containerized deployment |
 
-Python
+### Frontend
+| Technology | Purpose |
+|------------|---------|
+| React | UI framework |
+| Material UI | Component library |
+| Leaflet / React-Leaflet | Interactive map rendering |
+| Leaflet Heatmap | Event density visualization |
 
-FastAPI
+### Data Source
+- **[GDELT Project](https://www.gdeltproject.org/)** — A global database of events, language, and tone, monitoring the world's broadcast, print, and web news.
 
-ClickHouse Connect
+---
 
-Docker
+## 🚀 Features
 
-Responsibilities:
+| Feature | Description |
+|---------|-------------|
+| 🌍 **Global Event Map** | Visualize events across the world on an interactive map |
+| 🔥 **Heatmap Visualization** | View event density hotspots geographically |
+| ⏱️ **Timeline Filtering** | Filter events by Year / Month / Day |
+| 🔎 **Country Search** | Search and drill down into specific countries |
+| 📊 **Event Analytics** | View summary statistics and event breakdowns |
+| ⚡ **OLAP Performance** | Powered by ClickHouse for sub-second query responses |
 
-Data ingestion
+---
 
-API services
+## 📂 Project Structure
 
-Query execution
-
-Database
-ClickHouse
-
-ClickHouse is used as the analytical database because it provides:
-
-Columnar storage
-
-High compression
-
-Extremely fast aggregation queries
-
-Efficient partitioning
-
-Table configuration:
-
-ENGINE = MergeTree
-PARTITION BY toYYYYMM(event_date)
-ORDER BY (event_date, global_event_id)
-Frontend
-
-The interactive dashboard is built using:
-
-React
-
-Material UI
-
-Leaflet
-
-React Leaflet
-
-Heatmap visualization
-
-🚀 Features
-🌍 Global Event Map
-
-Displays worldwide events using geographic coordinates.
-
-Each event appears as a marker on the map.
-
-🔥 Heatmap Visualization
-
-Heatmap mode shows event intensity density across regions, highlighting geopolitical hotspots.
-
-⏱ Timeline Explorer
-
-Users can explore events using:
-
-Year filter
-
-Month filter
-
-Day filter
-
-Timeline autoplay
-
-🔎 Country Search
-
-Users can filter events by country name.
-
-Example:
-
-Search: India
-📊 Event Summary
-
-The dashboard shows:
-
-Total events
-
-Conflict events (Goldstein < 0)
-
-Cooperation events (Goldstein > 0)
-
-🖥 Dashboard Preview
-
-(Add screenshots here)
-
-Example:
-
-/screenshots/dashboard_map.png
-/screenshots/dashboard_heatmap.png
-/screenshots/dashboard_summary.png
-📥 Dataset
-
-This project uses the GDELT Event Dataset, which contains structured information about global events extracted from international news sources.
-
-Each record contains:
-
-Column	Description
-GlobalEventID	Unique event identifier
-SQLDATE	Event date
-Actor1CountryCode	Country involved
-ActionGeo_Lat	Latitude
-ActionGeo_Long	Longitude
-GoldsteinScale	Event intensity
-SOURCEURL	Source article
-🚀 Running the Project
-1️⃣ Start ClickHouse
-docker compose up -d
-2️⃣ Load CSV Data
-python bulk_loader.py --input-dir ./data
-3️⃣ Start Backend
-uvicorn api:app --reload
-
-API documentation:
-
-http://localhost:8000/docs
-4️⃣ Start Dashboard
-npm start
-
-Dashboard runs at:
-
-http://localhost:3000
-📡 API Example
-
-Example query:
-
-GET /events?year=2026&month=2&day=22
-
-Example response:
-
-[
- {
-  "country": "IND",
-  "lat": 20.5937,
-  "lon": 78.9629,
-  "goldstein": -4.0
- }
-]
-📂 Project Structure
-gdelt-event-dashboard
+```
+gdelt-bigdata-analytics-platform/
 │
-├── backend
-│   ├── api.py
-│   ├── bulk_loader.py
+├── backend/
+│   ├── api.py               # FastAPI application & endpoints
+│   ├── bulk_loader.py       # GDELT CSV ingestion pipeline
+│   └── requirements.txt     # Python dependencies
 │
-├── dashboard
-│   ├── src
-│   │   └── App.js
+├── dashboard/
+│   ├── src/
+│   │   └── App.js           # Main React application
+│   └── package.json         # Node.js dependencies
 │
-├── docker
-│   └── docker-compose.yml
+├── docker/
+│   └── docker-compose.yml   # ClickHouse + service orchestration
 │
-├── data
-│   └── gdelt_csv_files
+├── data/
+│   └── gdelt_csv_files/     # Raw GDELT input data (place CSV files here)
 │
 └── README.md
-⚡ Performance
+```
 
-Using ClickHouse provides extremely fast analytical queries.
+---
 
-Example metrics:
+## ▶️ Getting Started
 
-Query	Time
-Event count by year	< 50 ms
-Country aggregation	< 100 ms
-Heatmap query	< 200 ms
-📚 GDELT Event Classification
-QuadClass	Meaning
-1	Verbal Cooperation
-2	Material Cooperation
-3	Verbal Conflict
-4	Material Conflict
+### Prerequisites
 
-Goldstein Scale:
+Make sure you have the following installed:
+- [Docker & Docker Compose](https://docs.docker.com/compose/install/)
+- [Python 3.10+](https://www.python.org/downloads/)
+- [Node.js 18+](https://nodejs.org/)
 
--10 → strong conflict
-+10 → strong cooperation
-🎓 Academic Relevance
+---
 
-This project demonstrates concepts in:
+### 1️⃣ Start ClickHouse
 
-Big Data Analytics
+```bash
+cd docker
+docker-compose up -d
+```
 
-OLAP Databases
+ClickHouse will be available at `http://localhost:8123`.
 
-Data Engineering Pipelines
+---
 
-Geospatial Data Visualization
+### 2️⃣ Install Backend Dependencies
 
-Full-Stack Analytics Systems
+```bash
+cd backend
+pip install -r requirements.txt
+```
 
-👨‍💻 Author
+---
 
-Manmohan Reddy
-B.Tech – Data Analytics
+### 3️⃣ Load GDELT Data
+
+Place your GDELT `.csv` files inside the `data/gdelt_csv_files/` directory, then run:
+
+```bash
+python bulk_loader.py --input-dir ./data
+```
+
+> ⏳ Depending on the volume of data, this step may take several minutes.
+
+---
+
+### 4️⃣ Start the Backend API
+
+```bash
+uvicorn api:app --reload
+```
+
+The API will be available at `http://localhost:8000`.  
+Interactive API docs (Swagger UI): `http://localhost:8000/docs`
+
+---
+
+### 5️⃣ Start the Dashboard
+
+```bash
+cd dashboard
+npm install
+npm start
+```
+
+The dashboard will be available at:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 🗃️ Database Schema (ClickHouse)
+
+The core GDELT events table follows the structure below:
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `GlobalEventID` | UInt64 | Unique event identifier |
+| `Day` | Date | Event date |
+| `Actor1CountryCode` | String | Country code of Actor 1 |
+| `Actor2CountryCode` | String | Country code of Actor 2 |
+| `GoldsteinScale` | Float32 | Event impact score (-10 to +10) |
+| `NumMentions` | UInt32 | Number of media mentions |
+| `ActionGeo_Lat` | Float32 | Event latitude |
+| `ActionGeo_Long` | Float32 | Event longitude |
+| `ActionGeo_CountryCode` | String | Country where event occurred |
+
+---
+
+## 📡 API Reference
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/events` | Fetch paginated events |
+| `GET` | `/events/heatmap` | Get heatmap data (lat, long, intensity) |
+| `GET` | `/events/country/{code}` | Events filtered by country |
+| `GET` | `/events/timeline` | Aggregated events by date |
+| `GET` | `/events/summary` | High-level event statistics |
+
+> Full interactive documentation available at `http://localhost:8000/docs` when the server is running.
+
+---
+
+## 🛠️ Troubleshooting
+
+**ClickHouse not starting?**  
+Check that port `8123` and `9000` are not already in use:
+```bash
+docker ps
+docker-compose logs clickhouse
+```
+
+**No data appearing on the map?**  
+Ensure your GDELT CSV files are placed in `data/gdelt_csv_files/` and the bulk loader completed without errors.
+
+**Frontend not connecting to backend?**  
+Verify the API is running at `http://localhost:8000` and CORS is enabled in `api.py`.
+
+---
+
+## 📚 References
+
+- [GDELT Project](https://www.gdeltproject.org/) — Global event dataset
+- [ClickHouse Documentation](https://clickhouse.com/docs) — OLAP database
+- [FastAPI Documentation](https://fastapi.tiangolo.com/) — Python web framework
+- [React Leaflet](https://react-leaflet.js.org/) — Map visualization library
+
+---
+
+## 👨‍💻 Author
+
+**Manmohan Reddy**  
+B.Tech – Data Analytics | Alliance University
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+> 💡 *Built as part of a Big Data Analytics capstone project exploring geopolitical trends using the GDELT dataset.*
